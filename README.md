@@ -38,7 +38,7 @@ qa-automation-journey/
 
 ## Prior Work
 
-- [Python Fundamentals](https://github.com/jgerardoo) — Completed Codecademy Learn Python 3, covering control flow, functions, loops, lists, and OOP (classes and instantiation).
+- [Python Fundamentals](https://github.com/jgerardoo/learning_python) — Completed Codecademy Learn Python 3, covering control flow, functions, loops, lists, and OOP (classes and instantiation).
 
 ---
 
