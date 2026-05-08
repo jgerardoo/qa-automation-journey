@@ -1,62 +1,14 @@
--- ============================================================
--- Learn SQL — Codecademy
--- Exercises and key queries from the course
--- ============================================================
 
 
--- ------------------------------------------------------------
--- SELECT basics
--- Retrieve all columns from a table
--- ------------------------------------------------------------
-SELECT * FROM celebs;
 
 
--- Retrieve specific columns only
-SELECT name, age FROM celebs;
 
 
--- ------------------------------------------------------------
--- CREATE TABLE
--- Define a new table structure
--- ------------------------------------------------------------
-CREATE TABLE celebs (
-  id    INTEGER,
-  name  TEXT,
-  age   INTEGER
-);
 
 
--- ------------------------------------------------------------
--- INSERT
--- Add a new row to a table
--- ------------------------------------------------------------
-INSERT INTO celebs (id, name, age)
-VALUES (1, 'Justin Bieber', 29);
 
 
--- ------------------------------------------------------------
--- UPDATE
--- Modify an existing row
--- ------------------------------------------------------------
-UPDATE celebs
-SET age = 22
-WHERE id = 1;
 
-
--- ------------------------------------------------------------
--- DELETE
--- Remove a row from a table
--- ------------------------------------------------------------
-DELETE FROM celebs
-WHERE age IS NULL;
-
-
--- ------------------------------------------------------------
--- ALTER TABLE
--- Add a new column to an existing table
--- ------------------------------------------------------------
-ALTER TABLE celebs
-ADD COLUMN twitter_handle TEXT;
 
 
 -- ------------------------------------------------------------
