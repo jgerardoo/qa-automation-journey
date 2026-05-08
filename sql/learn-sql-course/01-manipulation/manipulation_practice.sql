@@ -90,6 +90,7 @@ DROP TABLE feedback;
 /*
 =============================
 Learn SQL — Codecademy course
+Lesson 1: Manipulation
 Practice exercise
 =============================
 */

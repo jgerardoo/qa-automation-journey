@@ -1,7 +1,10 @@
---------------------------------------------
--- Learn SQL — Codecademy
--- Exercises and key queries from the course
---------------------------------------------
+/*
+==========================================
+Learn SQL — Codecademy course
+Lesson 1: Manipulation
+Exercises and key queries from the course
+==========================================
+*/
 
 ----- SELECT -----
 
