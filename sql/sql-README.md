@@ -31,20 +31,22 @@ Learning SQL to support database validation in automation test suites.
 qa-automation-journey/
 └── sql/
     ├── sql-README.md
-    ├── 01-select-and-filter/
-    │   ├── basic_select.sql
-    │   ├── where_clauses.sql
-    │   └── sorting.sql
-    ├── 02-aggregations/
-    │   ├── group_by.sql
-    │   └── having.sql
-    ├── 03-joins/
-    │   ├── inner_join.sql
-    │   ├── left_join.sql
-    │   └── multi_table.sql
-    ├── 04-subqueries/
-    │   └── subqueries.sql
-    └── cheatsheet.md
+    ├── cheatsheet.md
+    ├── sql-notes.md
+    ├── learn-sql-course/
+    │   ├── 00_learn_sql.sql
+    │   ├── 01-manipulation/
+    │   │   └── manipulation.sql
+    │   ├── 02-queries/
+    │   │   └── queries.sql
+    │   ├── 03-aggregate-functions/
+    │   │   └── aggregate_functions.sql
+    │   └── 04-multiple-tables/
+    │       └── multiple_tables.sql
+    ├── learn-sql-aggregate-functions-course/
+    │   └── 01_aggregate_functions.sql
+    └── learn-sql-multiple-tables-course/
+        └── 01_multiple_tables.sql
 ```
 
 ---
