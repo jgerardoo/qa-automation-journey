@@ -26,6 +26,29 @@ Learning SQL to support database validation in automation test suites.
 
 ---
 
+## Folder structure (this might be adjusted as progress is made)
+```
+qa-automation-journey/
+└── sql/
+    ├── sql-README.md
+    ├── 01-select-and-filter/
+    │   ├── basic_select.sql
+    │   ├── where_clauses.sql
+    │   └── sorting.sql
+    ├── 02-aggregations/
+    │   ├── group_by.sql
+    │   └── having.sql
+    ├── 03-joins/
+    │   ├── inner_join.sql
+    │   ├── left_join.sql
+    │   └── multi_table.sql
+    ├── 04-subqueries/
+    │   └── subqueries.sql
+    └── cheatsheet.md
+```
+
+---
+
 ## QA Relevance
 
 SQL is used in automation testing to:
