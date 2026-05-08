@@ -1,11 +1,14 @@
-# SQL — Phase 1
+# SQL Practice
 
 Learning SQL to support database validation in automation test suites.  
 **Courses:** Codecademy — Learn SQL, Aggregate Functions, Multiple Tables
 
+Practice queries written alongside the Codecademy Learn SQL course,
+using the PostgreSQL DVD Rental sample database
+
 ---
 
-## Courses
+## Courses progress
 
 | Course | Status | Hours |
 |---|---|---|
@@ -15,18 +18,23 @@ Learning SQL to support database validation in automation test suites.
 
 ---
 
-## Files
+## Environment
+- CodeAcademy website
+- PostgreSQL 16
+- DVD Rental sample database (postgresqltutorial.com)
+- DBeaver Community (GUI client)
 
-| File | Description |
-|---|---|
-| `notes.md` | Concepts explained in my own words |
-| `01_learn_sql.sql` | Exercises from the Learn SQL course |
-| `02_aggregate_functions.sql` | Exercises from Aggregate Functions |
-| `03_multiple_tables.sql` | Exercises from Multiple Tables |
+---
+
+## Workflow for personal practice
+1. Complete a lesson from the course (in the course website)
+2. Write queries in DBeaver against the DVD Rental database using the concepts learned in the lesson
+3. Save the working queries into the .sql files in this repo
 
 ---
 
 ## Folder structure (this might be adjusted as progress is made)
+Each folder/file maps to a topic covered in the course. 
 ```
 qa-automation-journey/
 └── sql/
