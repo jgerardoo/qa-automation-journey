@@ -90,10 +90,11 @@ DROP TABLE feedback;
 
 
 /*
-=================================================
+==================================================
 Learn SQL - Codecademy | Module 1: Manipulation
-Project exercise from the course lesson concepts.
-=================================================
+Practice exercise from the course lesson concepts.
+Project: Friends List
+==================================================
 */
 
 -- Create a table named friends with id, name, and birthday columns
