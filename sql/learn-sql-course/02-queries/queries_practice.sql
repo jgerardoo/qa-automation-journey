@@ -107,12 +107,11 @@ FROM film;
 
 
 
-
-
 /*
 =================================================
 Learn SQL - Codecademy | Module 2: Queries
-Project exercise from the course lesson concepts.
+Practice exercise from the course lesson concepts.
+Project: New York Restaurants
 =================================================
 */
 
