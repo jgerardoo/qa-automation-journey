@@ -1,8 +1,10 @@
 /*
 ========================================================
-Self practice using Claude AI to generate the exercises
-and then writing the SQL code to complete it.
-DVD Rental database using DBeaver and PostgreSQL
+Learn SQL - Codecademy | Module 1: Manipulation
+Practice exercises based on the course lesson concepts.
+Scenarios generated with Claude AI assistance.
+SQL written independently using the DVD Rental database,
+PostgreSQL, and DBeaver.
 ========================================================
 
 Exercise 1: Create a table
@@ -88,11 +90,10 @@ DROP TABLE feedback;
 
 
 /*
-=============================
-Learn SQL — Codecademy course
-Lesson 1: Manipulation
-Practice exercise
-=============================
+=================================================
+Learn SQL - Codecademy | Module 1: Manipulation
+Project exercise from the course lesson concepts.
+=================================================
 */
 
 -- Create a table named friends with id, name, and birthday columns
