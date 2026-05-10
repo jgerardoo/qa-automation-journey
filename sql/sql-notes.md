@@ -1,9 +1,6 @@
 # SQL Notes
 
-Personal notes written in my own words as I go through the Codecademy SQL courses.  
-Updated continuously throughout Phase 1.
-
----
+Notes with relevant information taken as I go through the Codecademy SQL courses.
 
 ## Core Concepts
 
@@ -40,41 +37,62 @@ Some constraints that can be set:
 
 Note: There can be only one PRIMARY KEY column per table, but there can be multiple UNIQUE columns in the table.
 
----
-
-## SELECT — Retrieving Data
-
+### Statements
+A statement is text that the database recognizes as a valid command. Statements always end in a semicolon (;).
 ```sql
-SELECT column1, column2 FROM table_name;
-SELECT * FROM table_name; -- * means all columns
+CREATE TABLE table_name (
+   column_1 data_type, 
+   column_2 data_type, 
+   column_3 data_type
+);
 ```
 
+#### Types of Statements
+- Data Query Language (DQL): Includes commands for performing queries on data within schema objects, retrieving some schema relation based on the query passed to it.
+  - SELECT retrieves data from the database.
+- Data Definition Language (DDL): Includes commands used to define the database schema. These commands are used to create and modify the structure of database objects.
+  - CREATE creates an object in the database.
+  - DROP deletes an object from the database.
+  - ALTER changes the definition of an existing object in the database.
+- Data Manipulation Language (DML): Includes commands used to modify the data stored in the database.
+  - INSERT inserts new data into a database table.
+  - UPDATE alters data in a database table.
+  - DELETE removes data from a database table.
+- Data Control Language (DCL): Includes commands dealing with the controls and properties of the DBMS, such as rights and permissions to database objects.
+  - GRANT grants a user permissions on a database object.
+  - REVOKE removes a user’s permissions on a database object.
+
+### Agregate Functions
+These functions are used to perform calculations on the raw data to answer specific data questions.
+Calculations performed on multiple rows of a table are called aggregates.
+Some important aggregates:
+- COUNT(): count the number of rows
+- SUM(): the sum of the values in a column
+- MAX() / MIN(): the largest/smallest value
+- AVG(): the average of the values in a column
+- ROUND(): round the values in the column
+
 ---
 
-## WHERE — Filtering Results
-
+## Basic examples of SQL code
+Return first and last name from a table of users
 ```sql
-SELECT * FROM users WHERE status = 'active';
-SELECT * FROM orders WHERE total > 100;
+SELECT firstName, lastName
+FROM users;
 ```
 
----
-
-## ORDER BY — Sorting
-
+Delete records from a transaction table with a particular field value
 ```sql
-SELECT * FROM products ORDER BY price ASC;
-SELECT * FROM products ORDER BY price DESC;
+DELETE FROM transactionTable
+WHERE transactionKey = '5';
 ```
 
----
-
-## LIMIT — Restricting Rows Returned
-
+Create a table with three fields
 ```sql
-SELECT * FROM logs LIMIT 10; -- useful for checking recent records
+CREATE TABLE cars (
+  manufacturer VARCHAR(40),
+  model VARCHAR(40),
+  year INT
+);
 ```
-
 ---
-
-<!-- Add new concepts here as you learn them -->
