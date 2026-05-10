@@ -28,8 +28,10 @@ using the PostgreSQL DVD Rental sample database
 
 ## Workflow for personal practice
 1. Complete a lesson from the course (in the course website)
-2. Write queries in DBeaver against the DVD Rental database using the concepts learned in the lesson
-3. Save the working queries into the .sql files in this repo
+2. Complete the lesson practice(s)
+3. Use Claude AI to generate more exercises based on the lesson completed
+4. Write queries in DBeaver against the DVD Rental database using the exercies provided by Claude AI
+5. Save all the working queries (from both the course website and AI generated) into the .sql files in this repo
 
 ---
 
