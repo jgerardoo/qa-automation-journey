@@ -188,3 +188,95 @@ SELECT location AS 'Locations with more than 500 employees', AVG(employees) AS '
 FROM startups
 GROUP BY location
 HAVING AVG(employees) > 500;
+
+
+/*
+======================================================
+Learn SQL - Codecademy | Module 3: Aggregate Functions
+Practice exercise from the course lesson concepts.
+Project: Hacker news
+======================================================
+
+In this project, I will be working with a table named hacker_news that contains stories
+from Hacker News since its launch in 2007. It has the following columns:
+	- title: the title of the story
+	- user: the user who submitted the story
+	- score: the score of the story
+	- timestamp: the time of the story
+	- url: the link of the story
+*/
+
+-- What are the top five stories with the highest scores?
+ SELECT title, score
+ FROM hacker_news
+ ORDER BY 2 DESC
+ LIMIT 5;
+
+---------- Hacker News Moderating ----------
+-- First, find the total score of all the stories
+SELECT SUM(score) AS 'Total score of all stories'
+FROM hacker_news;
+
+-- Find the individual users who have gotten combined scores of more than 200, and their combined scores
+SELECT user, SUM(score) AS 'Score'
+FROM hacker_news
+GROUP BY 1
+HAVING SUM(score) > 200;
+
+-- Add these user's scores together and divide by the total to get the percentage
+SELECT (517 + 309 + 304 + 282) / 6366.0 AS 'combined % of total scores in the website';
+
+-- How many times has each offending user posted this link "https://www.youtube.com/watch?v=dQw4w9WgXcQ"?
+SELECT user, COUNT(user) AS 'Number of times posted'
+from hacker_news
+WHERE url LIKE '%watch?v=dQw4w9WgXcQ%'
+GROUP BY 1;
+
+---------- Which sites feed Hacker News? ----------
+-- First, we want to categorize each story based on their source (GitHub, Medium, or New York Times)
+-- Add a column for the number of stories from each URL
+SELECT COUNT(*) AS 'Number of stories from each source', -- Adding (*) instead of (url) so NULL values get counted as well
+  CASE
+    WHEN url LIKE '%github.com%' THEN 'GitHub'
+    WHEN url LIKE '%medium.com%' THEN 'Medium'
+    WHEN url LIKE '%nytimes.com%' THEN 'NY times'
+    ELSE 'Other'
+  END AS 'Source'
+FROM hacker_news
+GROUP BY 2;
+
+-------- What's the best time to post a story? --------
+-- Take a look at the timestamp column:
+SELECT timestamp
+FROM hacker_news
+LIMIT 10;
+
+-- Understand the strftime() function
+-- strftime() allows you to return a formatted date.
+SELECT timestamp,
+   strftime('%H', timestamp) AS 'Just the hour (24 hrs based)'
+FROM hacker_news
+GROUP BY 1
+LIMIT 20;
+
+-- Test the strftime() function writing a query that returns three columns:
+  -- The hours of the timestamp
+  -- The average score for each hour
+  -- The count of stories for each hour
+SELECT strftime('%H', timestamp) AS 'The hour the story was posted',
+  AVG(score) AS 'Average score',
+  COUNT(*) AS 'Number of stories'
+FROM hacker_news
+GROUP BY 1;
+
+-- Edit a few things in the previous query:
+  -- Round the average scores (ROUND())
+  -- Rename the columns to make it more readable (AS)
+  -- Add a WHERE clause to filter out the NULL values in timestamp
+SELECT strftime('%H', timestamp) AS 'The hour the story was posted',
+  ROUND(AVG(score), 0) AS 'Average score',
+  COUNT(*) AS 'Number of stories'
+FROM hacker_news
+WHERE timestamp IS NOT NULL
+GROUP BY 1
+ORDER BY 2 DESC;
