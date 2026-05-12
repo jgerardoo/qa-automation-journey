@@ -95,4 +95,14 @@ CREATE TABLE cars (
   year INT
 );
 ```
+
+### Using a plain string literal to stamp a fixed label on every row in a query
+```sql
+SELECT first_name, last_name, 'customer' AS "source"
+FROM customer
+UNION
+SELECT first_name, last_name, 'staff' AS "source"
+FROM staff;
+```
+
 ---
