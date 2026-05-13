@@ -29,7 +29,7 @@ qa-automation-journey/
 │
 ├── sql/                  # Phase 2 — SQL fundamentals and exercises
 ├── javascript/           # Phase 3 — JS fundamentals and exercises
-├── javascript/           # Phase 4 — Web Basics — HTML, DOM, DevTools, HTTP
+├── web/                  # Phase 4 — Web Basics — HTML, DOM, DevTools, HTTP
 ├── playwright/           # Phase 5 — Web automation projects
 ├── cicd/                 # Phase 6 — GitHub Actions workflows and config
 └── appium/               # Phase 7 — Mobile automation projects
