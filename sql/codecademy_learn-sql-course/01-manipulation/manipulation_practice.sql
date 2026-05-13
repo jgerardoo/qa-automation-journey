@@ -1,4 +1,65 @@
 /*
+==================================================
+Learn SQL - Codecademy | Module 1: Manipulation
+Practice exercise from the course lesson concepts.
+Project: Friends List table
+==================================================
+*/
+
+-- Create a table named friends with id, name, and birthday columns
+CREATE TABLE friends (
+  id INTEGER PRIMARY KEY,
+  name TEXT NOT NULL,
+  birthday DATE NOT NULL
+);
+
+-- add "Ororo Munroe" to friends.
+INSERT INTO friends (id, name, birthday)
+VALUES (1, 'Ororo Munroe', '1940-05-30');
+
+-- add two more records
+INSERT INTO friends (id, name, birthday)
+VALUES (2, 'Pepe Pecas', '1990-10-12');
+
+INSERT INTO friends (id, name, birthday)
+VALUES (3, 'John Smith', '1990-10-13');
+
+-- update "Ororo Munroe" name to "Storm"
+UPDATE friends
+SET name = 'Storm'
+WHERE id = 1;
+
+-- add a new email column
+ALTER TABLE friends
+ADD COLUMN email TEXT;
+
+-- update email for all records in the table
+UPDATE friends
+SET email = 'storm@codecademy.com'
+WHERE id = 1;
+
+UPDATE friends
+SET email = 'pepe@codecademy.com'
+WHERE id = 2;
+
+UPDATE friends
+SET email = 'john@codecademy.com'
+WHERE id = 3;
+
+-- remove record with id 1
+DELETE FROM friends
+WHERE id = 1;
+
+-- check the results
+SELECT * 
+FROM friends;
+
+
+
+
+
+
+/*
 ========================================================
 Learn SQL - Codecademy | Module 1: Manipulation
 Practice exercises based on the course lesson concepts.
@@ -85,62 +146,3 @@ Exercise 8: Clean up
 Drop the table entirely when you're done with it.
 */
 DROP TABLE feedback;
-
-
-
-
-/*
-==================================================
-Learn SQL - Codecademy | Module 1: Manipulation
-Practice exercise from the course lesson concepts.
-Project: Friends List
-==================================================
-*/
-
--- Create a table named friends with id, name, and birthday columns
-CREATE TABLE friends (
-  id INTEGER PRIMARY KEY,
-  name TEXT NOT NULL,
-  birthday DATE NOT NULL
-);
-
--- add "Ororo Munroe" to friends.
-INSERT INTO friends (id, name, birthday)
-VALUES (1, 'Ororo Munroe', '1940-05-30');
-
--- add two more records
-INSERT INTO friends (id, name, birthday)
-VALUES (2, 'Pepe Pecas', '1990-10-12');
-
-INSERT INTO friends (id, name, birthday)
-VALUES (3, 'John Smith', '1990-10-13');
-
--- update "Ororo Munroe" name to "Storm"
-UPDATE friends
-SET name = 'Storm'
-WHERE id = 1;
-
--- add a new email column
-ALTER TABLE friends
-ADD COLUMN email TEXT;
-
--- update email for all records in the table
-UPDATE friends
-SET email = 'storm@codecademy.com'
-WHERE id = 1;
-
-UPDATE friends
-SET email = 'pepe@codecademy.com'
-WHERE id = 2;
-
-UPDATE friends
-SET email = 'john@codecademy.com'
-WHERE id = 3;
-
--- remove record with id 1
-DELETE FROM friends
-WHERE id = 1;
-
--- check the results
-SELECT * 
-FROM friends;

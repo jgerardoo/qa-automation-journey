@@ -46,6 +46,6 @@ WHERE id = 4;
 
 
 ----- DELETE -----
--- Remove a row (or more) from a table
+-- Remove a row from a table
 DELETE FROM celebs 
 WHERE twitter_handle IS NULL;
