@@ -104,4 +104,3 @@ HAVING COUNT(*) > 10;
 /* NOTE:
 When we want to limit the results of a query based on values of the individual rows, use WHERE.
 When we want to limit the results of a query based on an aggregate property, use HAVING. */
-
