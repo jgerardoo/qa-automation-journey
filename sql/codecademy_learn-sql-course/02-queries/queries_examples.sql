@@ -6,7 +6,6 @@ Exercises and key queries from the course
 */
 
 ----- SELECT -----
-
 -- Select individual columns by their names to do the query
 SELECT name, genre, year
 FROM movies;
@@ -122,11 +121,13 @@ FROM movies
 ORDER BY imdb_rating DESC
 LIMIT 5;                        -- returns only the top 5 movies by IMDb rating
 
+/*
 ----- CASE -----
-/* Use CASE to implement conditional logic in a query
+ Use CASE to implement conditional logic in a query
     If the rating is above 8, then it is Fantastic.
     If the rating is above 6, then it is Poorly Received.
-    Else, Avoid at All Costs. */
+    Else, Avoid at All Costs.
+*/
 SELECT name,
  CASE
   WHEN imdb_rating > 8 THEN 'Fantastic'
