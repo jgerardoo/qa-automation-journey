@@ -11,14 +11,14 @@ Documenting my transition from Senior Manual QA Engineer (9+ years, Android & iO
 
 | Phase | Topic | Status | Started | Completed |
 |---|---|---|---|---|
-| Phase 0 | Git, Terminal & Automation Mindset | ✅ Complete | | |
-| Python | Codecademy — Learn Python 3 | ✅ Complete | | |
-| Phase 1 | SQL Fundamentals (Codecademy) | 🔄 In Progress | | |
-| Phase 2 | JavaScript Fundamentals | ⏳ Upcoming | | |
-| Phase 3 | Web Basics — HTML, DOM, DevTools, HTTP | ⏳ Upcoming | | |
-| Phase 4 | Web Automation — Playwright + JavaScript | ⏳ Upcoming | | |
-| Phase 5 | CI/CD & Professional Practices | ⏳ Upcoming | | |
-| Phase 6 | Mobile Automation — Appium + Python | ⏳ Upcoming | | |
+| Phase 0 | Git, Terminal & Automation Mindset | ✅ Complete | April 14, 2026 | April 15, 2026 |
+| Phase 1 | Python (Codecademy - Learn Python 3) | ✅ Complete | April 15, 2026 | May 8, 2026 |
+| Phase 2 | SQL Fundamentals (Codecademy - Learn SQL) | ✅ Complete | May 8, 2026 | May 12, 2026 |
+| Phase 3 | JavaScript Fundamentals ( add source) | 🔄 In Progress | May 9, 2026 | |
+| Phase 4 | Web Basics — HTML, DOM, DevTools, HTTP | ⏳ Upcoming | | |
+| Phase 5 | Web Automation — Playwright + JavaScript | ⏳ Upcoming | | |
+| Phase 6 | CI/CD & Professional Practices | ⏳ Upcoming | | |
+| Phase 7 | Mobile Automation — Appium + Python | ⏳ Upcoming | | |
 
 ---
 
@@ -27,16 +27,17 @@ Documenting my transition from Senior Manual QA Engineer (9+ years, Android & iO
 ```
 qa-automation-journey/
 │
-├── sql/                  # Phase 1 — SQL fundamentals and exercises
-├── javascript/           # Phase 2 — JS fundamentals and exercises
-├── playwright/           # Phase 4 — Web automation projects
-├── cicd/                 # Phase 5 — GitHub Actions workflows and config
-└── appium/               # Phase 6 — Mobile automation projects
+├── sql/                  # Phase 2 — SQL fundamentals and exercises
+├── javascript/           # Phase 3 — JS fundamentals and exercises
+├── web/                  # Phase 4 — Web Basics — HTML, DOM, DevTools, HTTP
+├── playwright/           # Phase 5 — Web automation projects
+├── cicd/                 # Phase 6 — GitHub Actions workflows and config
+└── appium/               # Phase 7 — Mobile automation projects
 ```
 
 ---
 
-## Prior Work
+## Prior Work (Phase 0 and Phase 1)
 
 - [Python Fundamentals](https://github.com/jgerardoo/learning_python) — Completed Codecademy Learn Python 3, covering control flow, functions, loops, lists, and OOP (classes and instantiation).
 
