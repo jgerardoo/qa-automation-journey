@@ -1,4 +1,81 @@
 /*
+======================================================
+Learn SQL - Codecademy | Module 4: Multiple Tables
+Practice exercise from the course lesson concepts.
+Project: Lyft Trip Data
+    Database Schema:
+        - trips: trips information
+        - riders: user data
+        - cars: autonomous cars
+======================================================
+ */
+
+-- Examine the three tables
+SELECT * FROM cars;
+SELECT * FROM riders;
+SELECT * FROM trips;
+
+-- Whats the primary key in each table?
+    -- cars: id
+    -- riders: id
+    -- trips: id
+
+-- Try out a simple cross join between riders and cars
+SELECT *
+FROM riders
+JOIN cars;
+
+-- Create a Trip Log with the trips and its users using a LEFT JOIN
+SELECT *
+FROM trips
+LEFT JOIN riders
+    ON trips.rider_id = riders.id;
+
+-- Create a link between the trips and the cars used during those trips using an INNER JOIN
+SELECT *
+FROM trips
+INNER JOIN cars
+    ON trips.car_id = cars.id;
+
+-- There are three new users this month. Stack the riders table on top of the new table named riders2.
+SELECT *
+FROM riders
+UNION
+SELECT *
+FROM riders2;
+
+-------- Bonus: Queries and Aggregates --------
+-- What is the average cost of a trip?
+SELECT COUNT(id) AS 'number_of_trips', ROUND(AVG(cost), 2) AS 'trip_avg_cost'
+FROM trips;
+
+-- Find all the riders who have used Lyft less than 500 times!
+SELECT first, last, username, total_trips
+FROM riders
+WHERE total_trips < 500
+UNION
+SELECT first, last, username, total_trips
+FROM riders2
+WHERE total_trips < 500;
+
+-- Calculate the number of cars that are active.
+SELECT COUNT(id) AS 'active_car_count', status
+FROM cars
+WHERE status = 'active'
+GROUP BY status;
+
+-- Write a query that finds the two cars that have the highest trips_completed
+SELECT *
+FROM cars
+ORDER BY trips_completed DESC
+LIMIT 2;
+
+
+
+
+
+
+/*
 ================================================================
 Learn SQL - Codecademy | Module 4 Practice: Multiple Tables
 Practice exercises based on the course lesson concepts.
@@ -6,7 +83,6 @@ Scenarios generated with Claude AI assistance.
 SQL written independently using the DVD Rental database,
 PostgreSQL, and DBeaver.
 ================================================================
-
 
 Exercise 1: Explore the relationships
 Before joining anything, look at the customer, payment, and rental tables individually.
@@ -94,80 +170,3 @@ INNER JOIN payment p
 GROUP BY c.customer_id
 HAVING SUM(p.amount) > 150
 ORDER BY 3 DESC;
-
-
-
-
-
-
-/*
-======================================================
-Learn SQL - Codecademy | Module 4: Multiple Tables
-Practice exercise from the course lesson concepts.
-Project: Lyft Trip Data
-    Database Schema:
-        - trips: trips information
-        - riders: user data
-        - cars: autonomous cars
-======================================================
- */
-
--- Examine the three tables
-SELECT * FROM cars;
-SELECT * FROM riders;
-SELECT * FROM trips;
-
--- Whats the primary key in each table?
-    -- cars: id
-    -- riders: id
-    -- trips: id
-
--- Try out a simple cross join between riders and cars
-SELECT *
-FROM riders
-JOIN cars;
-
--- Create a Trip Log with the trips and its users using a LEFT JOIN
-SELECT *
-FROM trips
-LEFT JOIN riders
-    ON trips.rider_id = riders.id;
-
--- Create a link between the trips and the cars used during those trips using an INNER JOIN
-SELECT *
-FROM trips
-INNER JOIN cars
-    ON trips.car_id = cars.id;
-
--- There are three new users this month. Stack the riders table on top of the new table named riders2.
-SELECT *
-FROM riders
-UNION
-SELECT *
-FROM riders2;
-
--------- Bonus: Queries and Aggregates --------
--- What is the average cost of a trip?
-SELECT COUNT(id) AS "number_of_trips", ROUND(AVG(cost), 2) AS "trip_avg_cost"
-FROM trips;
-
--- Find all the riders who have used Lyft less than 500 times!
-SELECT first, last, username, total_trips
-FROM riders
-WHERE total_trips < 500
-UNION
-SELECT first, last, username, total_trips
-FROM riders2
-WHERE total_trips < 500;
-
--- Calculate the number of cars that are active.
-SELECT COUNT(id) AS "active_car_count", status
-FROM cars
-WHERE status = "active"
-GROUP BY status;
-
--- Write a query that finds the two cars that have the highest trips_completed
-SELECT *
-FROM cars
-ORDER BY trips_completed DESC
-LIMIT 2;

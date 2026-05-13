@@ -4,8 +4,6 @@ Learn SQL - Codecademy | Module 4: Multiple Tables
 Exercises and key queries from the course
 ======================================================
 
-
-
 ---------- Primary Key and Foreign Key ----------
 Primary Key: A unique identifier for each record in a table
     - customer_id in the customers table
@@ -104,4 +102,3 @@ SELECT customers.customer_name, previous_query.subscriptions
 FROM previous_query
 JOIN customers
     ON previous_query.customer_id = customers.customer_id
-
