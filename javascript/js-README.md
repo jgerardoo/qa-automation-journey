@@ -88,12 +88,12 @@ Exercism exercises are done after each Codecademy section and each javascript.in
 
 ---
 
-## Repository Structure
+## Repository Structure (the structure might change as progress is made)
 
 ```
 javascript/
-├── README.md                        <- this file
-├── notes.md                         <- concepts explained in my own words, updated continuously
+├── js-README.md                     <- this file
+├── js-notes.md                      <- concepts explained in my own words, updated continuously
 ├── 01_variables_and_data_types.js   <- Codecademy module 1-2 exercises
 ├── 02_functions_and_scope.js        <- Codecademy module 3-4 exercises
 ├── 03_arrays_and_loops.js           <- Codecademy module 5-6 exercises
