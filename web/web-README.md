@@ -1,4 +1,4 @@
-# Web Basics — Phase 4
+# Web Basics
  
 Building foundational knowledge of how the web works before writing Playwright automation.  
 This phase is intentionally short and focused — the goal is not to become a web developer, but to understand the environment that Playwright operates in well enough to write meaningful, reliable tests.
@@ -82,8 +82,8 @@ Playwright supports multiple locator strategies. CSS selectors and XPath are the
  
 ```
 web/
-├── README.md        <- this file
-└── notes.md         <- concepts explained in my own words, updated as I go through the phase
+├── web-README.md        <- this file
+└── web-notes.md         <- concepts explained in my own words, updated as I go through the phase
 ```
  
 This phase is primarily conceptual — there are no exercise files in the same way as SQL or JavaScript. The notes file is the main artifact, and it should be thorough enough to serve as a personal reference during Phase 6.
