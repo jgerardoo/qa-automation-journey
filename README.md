@@ -16,9 +16,10 @@ Documenting my transition from Senior Manual QA Engineer (9+ years, Android & iO
 | Phase 2 | SQL Fundamentals (Codecademy - Learn SQL) | ✅ Complete | May 8, 2026 | May 12, 2026 |
 | Phase 3 | JavaScript Fundamentals ( add source) | 🔄 In Progress | May 14, 2026 | |
 | Phase 4 | Web Basics — HTML, DOM, DevTools, HTTP | ⏳ Upcoming | | |
-| Phase 5 | Web Automation — Playwright + JavaScript | ⏳ Upcoming | | |
-| Phase 6 | CI/CD & Professional Practices | ⏳ Upcoming | | |
-| Phase 7 | Mobile Automation — Appium + Python | ⏳ Upcoming | | |
+| Phase 5 | API Testing — Postman Academy + TAU | ⏳ Upcoming | | |
+| Phase 6 | Web Automation — Playwright + JavaScript | ⏳ Upcoming | | |
+| Phase 7 | CI/CD & Professional Practices | ⏳ Upcoming | | |
+| Phase 8 | Mobile Automation — Appium + Python | ⏳ Upcoming | | |
 
 ---
 
@@ -30,9 +31,10 @@ qa-automation-journey/
 ├── sql/                  # Phase 2 — SQL fundamentals and exercises
 ├── javascript/           # Phase 3 — JS fundamentals and exercises
 ├── web/                  # Phase 4 — Web Basics — HTML, DOM, DevTools, HTTP
-├── playwright/           # Phase 5 — Web automation projects
-├── cicd/                 # Phase 6 — GitHub Actions workflows and config
-└── appium/               # Phase 7 — Mobile automation projects
+├── api/                  # Phase 5 — API testing collections
+├── playwright/           # Phase 6 — Web automation projects
+├── cicd/                 # Phase 7 — GitHub Actions workflows and config
+└── appium/               # Phase 8 — Mobile automation projects
 ```
 
 ---
