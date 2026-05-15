@@ -1,4 +1,4 @@
-# JavaScript — Phase 2
+# JavaScript
 
 Building JavaScript fundamentals as the primary language for web automation with Playwright.  
 This phase uses a hybrid approach across three platforms to balance structured learning, depth on critical topics, and hands-on practice.
@@ -108,7 +108,7 @@ javascript/
 
 | Resource | Status | Started | Completed |
 |---|---|---|---|
-| Codecademy — Learn JavaScript | 🔄 In Progress | | |
+| Codecademy — Learn JavaScript | 🔄 In Progress | May 15, 2026 | |
 | javascript.info — Arrow functions | ⏳ Upcoming | | |
 | javascript.info — Destructuring | ⏳ Upcoming | | |
 | javascript.info — Promises | ⏳ Upcoming | | |
