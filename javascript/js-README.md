@@ -21,7 +21,7 @@ This phase intentionally combines three resources, each serving a different purp
 **Duration:** ~3 weeks | ~15 hours  
 **Format:** Browser-based coding environment, no local setup required
 
-Codecademy is used first because the interactive format is already familiar from the Python and SQL phases. It covers the core fundamentals quickly and lets the syntax become familiar before moving to deeper material. The built-in code runner and immediate feedback make it ideal for the first exposure to a new language.
+Codecademy is used first because the interactive format is already familiar from the Python and SQL phases. It covers the core fundamentals quickly and lets the syntax become familiar before moving to deeper material. The built-in code runner and immediate feedback make it ideal for the first exposure to a new language. The course also provides internal projects to practice the concepts learned after each lesson. The solutions for these internal projects are committed to this repo under the exercises/ folder as evidence of hands-on practice.
 
 **Modules covered:**
 | Module | Topics |
@@ -45,7 +45,7 @@ Codecademy is used first because the interactive format is already familiar from
 **Duration:** ~3 weeks (selected chapters only, not the full site)  
 **Format:** Text-based reading with embedded exercises
 
-javascript.info is the most thorough free JavaScript reference available. Rather than reading it end to end, only the chapters directly relevant to Playwright test writing are covered. This is used after Codecademy, not before — the concepts are already familiar, so the focus is on depth and nuance.
+javascript.info is the most thorough free JavaScript reference available. Rather than reading it end-to-end, only the chapters directly relevant to Playwright test writing are covered. This is used after Codecademy, not before — the concepts are already familiar, so the focus is on depth and nuance.
 
 **Chapters to cover — in this order:**
 
@@ -60,13 +60,17 @@ javascript.info is the most thorough free JavaScript reference available. Rather
 
 ---
 
-### Layer 3 — Exercism: Hands-On Reinforcement
-**Purpose:** Apply concepts immediately in a real coding environment  
-**Link:** https://exercism.org/tracks/javascript  
-**Duration:** Ongoing throughout Phase 2  
-**Format:** Local coding in VS Code, submitted to Exercism for review
+### Layer 3 — Exercism / Calude AI (Hands-On Reinforcement)
+**Purpose:** Apply concepts immediately after each lesson/chapter in a real coding environment  
+**Resources:**
+- [Excercism](https://exercism.org/tracks/javascript)
+- Claude AI - using a prompt with the concepts for each lesson to generate a practice exercise
 
-Exercism exercises are done after each Codecademy section and each javascript.info chapter — not saved for the end. The goal is to keep knowledge in the hands, not just in the head. Solutions are committed to this repo under the exercises/ folder as evidence of hands-on practice.
+**Duration:** Ongoing throughout the entire learning process
+
+**Format:** Local coding in VS Code, submitted to Calude AI/Exercism for review
+
+In addition to the internal practice projects from the Codecademy course, Exercism and Claude AI exercises will be done after each Codecademy section and each javascript.info chapter (not saved for the end). The goal is to keep knowledge in the hands, not just in the head. Solutions are committed to this repo under the exercises/ folder as evidence of hands-on practice.
 
 ---
 
@@ -116,5 +120,12 @@ javascript/
 | javascript.info — Error handling | ⏳ Upcoming | | |
 | javascript.info — Modules | ⏳ Upcoming | | |
 | Exercism — JavaScript track | ⏳ Ongoing from week 1 | | |
+
+## References
+- [JavaScript documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+- [JavaScript's standard built-in objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)
+- [The Math documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
+- [MDN's Lexical grammar](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords)
+- [Codecademy JavaScript documentation](https://www.codecademy.com/resources/docs/javascript)
 
 ---
