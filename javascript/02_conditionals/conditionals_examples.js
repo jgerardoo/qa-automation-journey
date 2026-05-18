@@ -130,5 +130,3 @@ switch (athleteFinalPosition) {
         break;
 }
 console.log("--------------------");
-
-// 
