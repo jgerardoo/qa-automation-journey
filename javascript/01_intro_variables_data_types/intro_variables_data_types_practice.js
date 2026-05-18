@@ -2,7 +2,7 @@
 ======================================================================
 Learn JavaScript - Codecademy | Lesson 1: Introduction to JavaScript
 Practice exercise from the course lesson concepts.
-Projectpractice 1: Kelvin Weather
+Project practice 1: Kelvin Weather
     Concepts: variables and printing to the console
 ======================================================================
 
@@ -47,7 +47,7 @@ console.log("--------------------------------------------");
 ======================================================================
 Learn JavaScript - Codecademy | Lesson 1: Introduction to JavaScript
 Practice exercise from the course lesson concepts.
-Projectpractice 2: Dog Years
+Project practice 2: Dog Years
     Concepts: variables and strings
 ======================================================================
 
