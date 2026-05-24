@@ -1,6 +1,6 @@
 /*
 ===============================================================================
-Exercise: Poetry Club Door Policy
+Exercise: Annalyn's Infiltration
 Source: https://exercism.org/tracks/javascript/exercises/annalyns-infiltration
 ===============================================================================
 
