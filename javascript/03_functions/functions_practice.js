@@ -222,3 +222,82 @@ const calculateSleepDebt = function() {
 
 // Task 11. Start the program by calling the calculateSleepDebt() function.
 calculateSleepDebt();
+console.log("------------------------------");
+console.log("------------------------------");
+
+
+/*
+==================================================================================
+Practice exercise generated with Claude AI assistance.
+JavaScript code for the solution written independently using the lesson concepts.
+Practice Exercise: Houston Astros Game Day Tracker
+==================================================================================
+
+A program that takes a player's name and their stats from a single game, evaluates their performance, and prints a postgame summary.
+
+Task 1. Using arrow function syntax, create a function named formatPlayerName that takes a single parameter name.
+        Inside, use .toLowerCase() and then return the name with the first letter capitalized. For now, you can assume the name is a single word.
+*/
+const formatPlayerName = name => {
+    const playerName = name.toLowerCase();
+    return playerName[0].toUpperCase() + playerName.slice(1);
+};
+// Testing the function:    console.log(formatPlayerName("jOHN"));
+
+/*
+Task 2. Using a function expression, create a function named getPerformanceLabel that takes a single parameter battingAverage.
+Using an if / else if / else block, return a label string based on the value:
+    .300 or above: "Elite"
+    .250 to .299: "Solid"
+    .200 to .249: "Average"
+    Below .200: "Struggling"
+*/
+const getPerformanceLabel = function(battingAverage) {
+    if (battingAverage >= .300) {
+        return "Elite";
+    } else if (battingAverage >= .250) {
+        return "Solid";
+    } else if (battingAverage >= .200) {
+        return "Average";
+    } else {
+        return "Struggling";
+    };
+};
+// Testing the function:    console.log(getPerformanceLabel(.249));
+
+/*
+Task 3. Using a function declaration, create a function named calculateBattingAverage that takes two parameters: hits and atBats.
+Return the result of dividing hits by atBats. Round the result to three decimal places using Math.round() and some multiplication trick
+(think about what multiplying and dividing by 1000 does).
+*/
+function calculateBattingAverage(hits, atBats) {
+    const batAvg = hits / atBats;
+    return Math.round((batAvg) * 1000) / 1000;
+};
+// Testing the function:    console.log(calculateBattingAverage(5, 10));
+
+/*
+Task 4. Using a function declaration, create the main orchestrator function named generateGameSummary.
+It should take three parameters: rawName, hits, and atBats.
+    Call formatPlayerName and store the result
+    Call calculateBattingAverage passing hits and atBats, and store the result
+    Call getPerformanceLabel passing the batting average result directly as the argument (no intermediate variable, pass the function call itself as the argument)
+    Use console.log and string interpolation to print: [Name] | AVG: .[average] | Rating: [label]
+*/
+function generateGameSummary(rawName, hits, atBats, homeRuns) {
+    const playerName = formatPlayerName(rawName);
+    const playerBatAvg = calculateBattingAverage(hits, atBats);
+    const playerPerf = getPerformanceLabel(calculateBattingAverage(hits, atBats));
+    if (homeRuns > 0) {
+        console.log(`${playerName} | AVG: ${playerBatAvg} | Rating: ${playerPerf} | HR: ${homeRuns}`);
+    } else {
+        console.log(`${playerName} | AVG: ${playerBatAvg} | Rating: ${playerPerf}`);
+    };
+};
+
+// Task 5. Call generateGameSummary three times with different players and stats to test all four performance labels.
+// At least one call should trigger "Elite" and one should trigger "Struggling".
+generateGameSummary("esteban", 12, 39, 5);
+generateGameSummary("caRLos", 6, 23, 1);
+generateGameSummary("gABRIEL", 4, 19, 0);
+generateGameSummary("Sergio", 23, 120, 0);
