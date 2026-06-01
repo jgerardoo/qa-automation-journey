@@ -3,7 +3,7 @@
 Learn JavaScript - Codecademy | Lesson 3: Functions
 Practice exercise from the course lesson concepts.
 Project practice 1: Rock, paper, or scissors
-    Concepts: control flow, build decision-making
+    Concepts: conditionals, functions
 =======================================================
 
 Given a certain input you want to return a certain output. If this than that.
@@ -124,7 +124,7 @@ console.log("------------------------------");
 Learn JavaScript - Codecademy | Lesson 3: Functions
 Practice exercise from the course lesson concepts.
 Project practice 2: Sleep debt calculator
-    Concepts: control flow, build decision-making
+    Concepts: Functions
 =======================================================
 
 The program will determine the actual and ideal hours of sleep for each night of the last week.
