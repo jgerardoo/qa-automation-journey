@@ -1,8 +1,9 @@
 /*
-References:
+Higher Order Functions (HOF) references:
     - JS functions: https://www.codecademy.com/resources/docs/javascript/functions
     - JS variables: https://www.codecademy.com/resources/docs/javascript/variables
-    - JS iterator: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator
+    - JS iterators: https://www.codecademy.com/resources/docs/javascript/iterators
+    - MDN iterators: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator
 
 Functions as Data:
 JavaScript functions behave like any other data type in the language:
@@ -87,3 +88,10 @@ const announcements = finalParticipants.map(member => {
     return member + ' joined the contest.';
 })
 console.log(announcements);
+
+// The .every() method checks if all elements in an array pass a certain condition.
+const animals = ['bears', 'cats', 'dogs', 'elephants', 'giraffes'];
+console.log(animals.every(animal => animal.length < 10));       // true - the length of all animals is less than 10
+
+// The .some() method checks if at least one element in an array passes a certain condition.
+console.log(animals.some(animal => animal.length > 10));        // false - no animal has a length greater than 10
