@@ -76,6 +76,20 @@ const squareNumbers = numbersToFive.map(number => {
 console.log(squareNumbers);
 console.log("--------------------");
 
+// The .find() method returns the first element in an array that passes a certain condition.
+const animalsToFind = ["hippo", "tiger", "lion", "seal", "cheetah", "monkey", "salamander", "elephant"];
+const foundAnimal = animalsToFind.find(animal => {
+    return animal[0] === "s";       // Returns the first element whose first letter is "s"
+});
+console.log(foundAnimal);           // seal
+console.log("----------");
+
+const numbers = [5, 12, 8, 130, 44];
+const foundNumber = numbers.find(number => number > 10);    // Returns the first element greater than 10
+console.log(foundNumber);           // 12 (stops iterating immediately after 12)
+
+console.log("--------------------");
+
 // The .findIndex() method returns the index of the first element in an array that passes a certain condition.
 const fruits = ["apple", "banana", "orange", "grape"];
 const indexOfOrange = fruits.findIndex(fruit => fruit === "orange");
