@@ -127,5 +127,6 @@ javascript/
 - [The Math documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
 - [MDN's Lexical grammar](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords)
 - [Codecademy JavaScript documentation](https://www.codecademy.com/resources/docs/javascript)
+- [JavaScript Errors](https://www.codecademy.com/resources/docs/javascript/errors)
 
 ---
