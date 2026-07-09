@@ -10,6 +10,9 @@ References:
     - JS MDN Arrow functions: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
     - JS MDN Global obeject: https://developer.mozilla.org/en-US/docs/Glossary/Global_object
     - JS conditionals: https://www.codecademy.com/resources/docs/javascript/conditionals
+    - JS variables: https://www.codecademy.com/resources/docs/javascript/variables
+    - JS destructuring: https://www.codecademy.com/resources/docs/javascript/destructuring
+    - MDN’s object instance documentation: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object#Methods_of_the_Object_constructor
 */
 
 // The this keyword
@@ -162,3 +165,114 @@ const botTwo = {
 botTwo.numOfSensors = 100;
 console.log(botTwo.numOfSensors);   // 100
 botTwo.numOfSensors = "one";        // "Pass in a number that is greater than or equal to 0"
+console.log("--------------------");
+
+/*
+Factory Functions
+functions that return objects. They allow us to create multiple instances of similar objects.
+*/
+const monsterFactory = (name, age, energySource, catchPhrase) => {
+    return { 
+        name: name,
+        age: age, 
+        energySource: energySource,
+        scare() {
+            console.log(catchPhrase);
+        } 
+    }
+};
+// create a new monster object
+const ghost = monsterFactory("Ghouly", 251, "ectoplasm", "BOO!");
+console.log(ghost.name);              // Ghouly
+console.log(ghost.age);               // 251
+console.log(ghost.energySource);      // ectoplasm
+ghost.scare();                        // BOO!
+console.log("--------------------");
+
+// create a robot factory function
+const robotFactory = (model, mobile) => {
+    return {
+        model: model,
+        mobile: mobile,
+        beep() {
+            console.log("Beep boop");
+        }
+    }
+};
+// create a new robot object
+const tinCan = robotFactory("P-500", true);
+console.log(tinCan.model);            // P-500
+console.log(tinCan.mobile);           // true
+tinCan.beep();                        // Beep boop
+console.log("--------------------");
+
+/*
+Property Value Shorthand
+When the property name and variable name are the same, you can use the property value shorthand to only write the name once.
+The following example works exactly the same as the previous factory function:
+*/
+const robotFactoryTwo = (model, mobile) => {
+    return {
+        model,
+        mobile
+    }
+};
+const megatron = robotFactoryTwo("A-100", true);
+console.log(megatron.model);          // A-100
+console.log(megatron.mobile);         // true
+console.log("--------------------");
+
+/*
+Destructured Assignment
+Extract key-value pairs from objects and save them as variables
+*/
+const vampire = {
+    name: "Dracula",
+    residence: "Transylvania",
+    preferences: {
+        day: "stay inside",
+        night: "satisfy appetite"
+    }
+};
+// extract the residence property as a variable WITHOUT destructuring
+const residence = vampire.residence;
+console.log(residence);                 // Transylvania
+// extract the name property as a variable WITH destructuring
+const { name } = vampire;
+console.log(name);                      // Dracula
+// use destructured assignment to grab nested properties of an object:
+const { day } = vampire.preferences; 
+console.log(day);                       // "stay inside"
+console.log("--------------------");
+
+// Built-in Object Methods
+// Object to use for the different built-in object methods
+const gadget = {
+    model: "SAL-1000",
+    mobile: true,
+    madeOf: "Steel",
+    energyLevel: 75
+};
+
+// Object.keys() - returns an array of the keys of an object
+// Ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+const gadgetKeys = Object.keys(gadget);
+console.log(gadgetKeys);
+console.log("----------");
+
+// Object.values() - returns an array of the values of an object
+// Ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values
+const gadgetValues = Object.values(gadget);
+console.log(gadgetValues);
+console.log("----------");
+
+// Object.entries() - returns an array of the key-value pairs of an object
+// Ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+const gadgetEntries = Object.entries(gadget);
+console.log(gadgetEntries);
+console.log("----------");
+
+// Object.assign() - copies the properties of one object into another object
+// Ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+const newGadget = Object.assign({laserBlaster: true, voiceRecognition: true}, gadget);
+console.log(newGadget);
