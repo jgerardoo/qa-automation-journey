@@ -1,10 +1,10 @@
 /*
 References:
     - JS Objects: https://www.codecademy.com/resources/docs/javascript/objects
-    - JS Objects: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
+    - JS MDN Objects: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
     - JS Data Types: https://www.codecademy.com/resources/docs/javascript/data-types
-    - JS Object Methods: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
-    - JS Object Prototypes: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes
+    - JS MDN Object Methods: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
+    - JS MDN Object Prototypes: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes
     - JS Operators: https://www.codecademy.com/resources/docs/javascript/operators
     - JS Loops: https://www.codecademy.com/resources/docs/javascript/loops
     - JS Arrays: https://www.codecademy.com/resources/docs/javascript/arrays
