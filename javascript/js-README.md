@@ -97,13 +97,15 @@ In addition to the internal practice projects from the Codecademy course, Exerci
 ```
 javascript/
 ├── js-README.md                     <- this file
-├── js-notes.md                      <- concepts explained in my own words, updated continuously
-├── 01_variables_and_data_types.js   <- Codecademy module 1-2 exercises
-├── 02_functions_and_scope.js        <- Codecademy module 3-4 exercises
-├── 03_arrays_and_loops.js           <- Codecademy module 5-6 exercises
-├── 04_objects_and_classes.js        <- Codecademy module 7-8 exercises
-├── 05_modules_and_async.js          <- Codecademy module 9-10 + javascript.info deep dive
-└── exercises/                       <- Exercism solutions, one file per challenge
+├── 01_intro_variables_data_types/   <- Codecademy lesson 1 + exercises
+├── 02_conditionals/                 <- Codecademy lesson 2 + exercises
+├── 03_functions/                    <- Codecademy lesson 3 + exercises
+├── 04_scope/                        <- Codecademy lesson 4 + exercises
+├── 05_arrays/                       <- Codecademy lesson 5 + exercises
+├── 06_loops/                        <- Codecademy lesson 6 + exercises
+├── 07_higher_order_functions_.../   <- Codecademy lesson 7 + exercises
+├── 08_objects/                      <- Codecademy lesson 8 + exercises
+└── exercism_practices/              <- Exercism solutions, one file per challenge
 ```
 
 ---
@@ -112,13 +114,13 @@ javascript/
 
 | Resource | Status | Started | Completed |
 |---|---|---|---|
-| Codecademy — Learn JavaScript | 🔄 In Progress | May 15, 2026 | |
-| javascript.info — Arrow functions | ⏳ Upcoming | | |
+| Codecademy — Learn JavaScript | ✅ Complete | May 15, 2026 | July 9, 2026 |
+| javascript.info — Arrow functions | 🔄 In Progress | | |
 | javascript.info — Destructuring | ⏳ Upcoming | | |
 | javascript.info — Promises | ⏳ Upcoming | | |
 | javascript.info — Async/await | ⏳ Upcoming | | |
-| javascript.info — Error handling | ⏳ Upcoming | | |
-| javascript.info — Modules | ⏳ Upcoming | | |
+| javascript.info — Error handling - try/catch | ⏳ Upcoming | | |
+| javascript.info — Modules - import/export | ⏳ Upcoming | | |
 | Exercism — JavaScript track | ⏳ Ongoing from week 1 | | |
 
 ## References
