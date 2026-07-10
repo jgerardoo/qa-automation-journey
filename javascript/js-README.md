@@ -32,10 +32,8 @@ Codecademy is used first because the interactive format is already familiar from
 | Scope | Global vs block scope |
 | Arrays | Array creation, methods, iteration |
 | Loops | for, while, for...of |
+| Iterators | Higher order functions and iterators |
 | Objects | Object syntax, methods, this keyword |
-| Classes | Class syntax, constructors, inheritance |
-| Modules | import/export, ES6 module structure |
-| Async/Await | Promises, async functions, error handling |
 
 ---
 
