@@ -223,6 +223,21 @@ console.log(megatron.mobile);         // true
 console.log("--------------------");
 
 /*
+Shorthand property name syntax for object creation
+Allows creating objects without explicitly specifying the property names (ie. explicitly declaring the value after the key).
+Shorthand property names populate an object with a key matching the identifier and a value matching the identifier’s value
+*/
+const activity = "Surfing";
+const beach = { activity };
+console.log(beach);                 // { activity: "Surfing" }
+
+const fullName = "Tony Hawk";
+const age = 30;
+const surfer = { fullName, age };
+console.log(surfer);                // { fullName: "Tony Hawk", age: 30 }
+console.log("--------------------");
+
+/*
 Destructured Assignment
 Extract key-value pairs from objects and save them as variables
 */

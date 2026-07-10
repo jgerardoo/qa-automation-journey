@@ -173,7 +173,144 @@ const team = {
 };
 
 team.addPlayer("Bugs", "Bunny", 76);
-console.log(team._players);
+console.table(team._players);
 console.log("--------------------");
 team.addGame("Titans", 100, 98);
-console.log(team._games);
+console.table(team._games);
+console.log("----------------------------------------");
+console.log("----------------------------------------");
+
+
+
+
+/*
+==================================================================================
+Practice exercise generated with Claude AI assistance.
+JavaScript code for the solution written independently using the lesson concepts.
+Practice Exercise: NASA JSC Mission Tracker
+==================================================================================
+
+Johnson Space Center needs a program to track active missions and their crew members.
+The tracker needs to protect its data, validate inputs, and compute mission stats on demand.
+
+
+Setup:
+Start with this empty shell. You'll build it out task by task:
+    const missionControl = {
+        _missions: [],
+        _activeMissionCount: 0,
+    };
+
+Task 1: Getters.
+Add a getter named missions that returns _missions.
+Add a getter named activeMissionCount that returns _activeMissionCount.
+
+Task 2: Add a mission.
+Add a method named addMission that takes three parameters: missionName, destination, and crewSize.
+Inside the method:
+    - Validate that missionName and destination are strings, and crewSize is a number.
+        If any check fails, log "Invalid mission data." and return without adding anything.
+    - If valid, build a mission object with four properties: missionName, destination, crewSize, and status set to "Active".
+        Push it into _missions and increment _activeMissionCount by 1.
+
+Task 3: Update mission status.
+Add a method named updateStatus that takes two parameters: missionName and newStatus.
+Inside, find the mission in _missions whose missionName matches the parameter.
+If found, update its status to newStatus. If newStatus is "Complete", decrement _activeMissionCount by 1.
+If no match is found, log Mission not found.
+
+Task 4: Computed getter for total crew.
+Add a getter named totalCrewDeployed that iterates over _missions and returns the sum of crewSize
+across all missions, regardless of status.
+
+Task 5: Computed getter for mission summary.
+Add a getter named missionSummary that iterates over _missions and returns a formatted summary string built by
+joining each mission's details. Each mission should contribute one line in this format:
+[missionName] | [destination] | Crew: [crewSize] | Status: [status].
+Join the lines with a newline character \n.
+
+Bonus task:
+Add a method named getMissionsByStatus that takes one parameter statusFilter and returns a new array containing
+only missions whose status matches statusFilter. Test it with "Active" and "Complete" and log the results.
+*/
+
+const missionControl = {
+    _missions: [],
+    _activeMissionCount: 0,
+    get missions() {
+        return this._missions;
+    },
+    get activeMissionCount() {
+        return this._activeMissionCount;
+    },
+    addMission(missionName, destination, crewSize) {
+        if (typeof missionName === "string" && typeof destination === "string" && typeof crewSize === "number") {
+            const mission = {
+                missionName,
+                destination,
+                crewSize,
+                status: "Active"
+            };
+            this._missions.push(mission);
+            this._activeMissionCount++;
+        } else {
+            console.log("Invalid mission data.");
+        }
+    },
+    updateStatus(missionName, newStatus) {
+        let missionFound = false;
+        for (let mission of this._missions) {
+            if (mission.missionName === missionName) {
+                mission.status = newStatus;
+                if (newStatus === "Complete") {
+                    this._activeMissionCount--;
+                }
+                missionFound = true;
+                break;
+            }
+        }
+        if (!missionFound) {
+            console.log("Mission not found.");
+        }
+    },
+    get totalCrewDeployed() {
+        let totalCrew = 0;
+        for (let mission of this._missions) {
+            totalCrew += mission.crewSize;
+        }
+        return totalCrew;
+    },
+    get missionSummary() {
+        let summaryOfMissions = [];
+        for (let mission of this._missions) {
+            let summaryOfMission = `${mission.missionName} | ${mission.destination} | Crew: ${mission.crewSize} | Status: ${mission.status}`;
+            summaryOfMissions.push(summaryOfMission);
+        }
+        return summaryOfMissions.join('\n');
+    },
+    // Bonus task
+    getMissionsByStatus(statusFilter) {
+        const missionsByStatus = this._missions.filter(mission => mission.status === statusFilter);
+        return missionsByStatus;
+    }
+};
+
+/*
+Task 6: Test it.
+Run these calls in order and log results to verify everything works:
+*/
+missionControl.addMission("Artemis IV", "Moon", 4);
+missionControl.addMission("Ares I", "Mars", 6);
+missionControl.addMission("Voyager X", "Europa", 3);
+missionControl.addMission("BadMission", 99, 2);         // should trigger "Invalid mission data"
+
+missionControl.updateStatus("Ares I", "Complete");
+missionControl.updateStatus("Ghost", "Active");         // should trigger not found
+
+console.log(missionControl.activeMissionCount);
+console.log(missionControl.totalCrewDeployed);
+console.log(missionControl.missionSummary);
+
+// Bonus test (using console.table to see the full object in the debug console)
+console.table(missionControl.getMissionsByStatus("Active"));
+console.table(missionControl.getMissionsByStatus("Complete"));
