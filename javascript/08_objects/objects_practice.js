@@ -2,7 +2,7 @@
 =======================================================
 Learn JavaScript - Codecademy | Lesson 8: Objects
 Practice exercise from the course lesson concepts.
-Project practice: Meal Maker
+Project practice 1: Meal Maker
     Concepts: Objects in JavaScript
 =======================================================
 
@@ -10,7 +10,6 @@ A restaurant has hired you to create a function for their website
 that allows them to set a meal and price each morning for Today’s Special.
 Use your knowledge of getters and setters to make sure anyone who uses the new function
 can generate a meal and a price for Today’s Special without any embarrassing errors!
-
 
 
 ---- Create the menu object
@@ -77,6 +76,104 @@ menu.price = 9;
 console.log(menu);
 
 /*
-11. Use the getter method to console.log() Today’s Special. Assuming you used the meal setter to assign a string, and the price setter to assign a number in task 8, you should see Today’s Special logged to the console.
+11. Use the getter method to console.log() Today’s Special.
+Assuming you used the meal setter to assign a string, and the price setter to assign a number in task 8,
+you should see Today’s Special logged to the console.
 */
 console.log(menu.todaysSpecial);
+console.log("----------------------------------------");
+console.log("----------------------------------------");
+
+
+/*
+=======================================================
+Learn JavaScript - Codecademy | Lesson 8: Objects
+Practice exercise from the course lesson concepts.
+Project practice 2: Team Stats
+    Concepts: Objects in JavaScript
+=======================================================
+
+Practice Objects in JavaScript by creating a data structure to maintain and manipulate sports stats!
+
+We want to create, retrieve, and add information about your favorite sports team.
+Basketball, soccer, tennis, or water polo, you pick it.
+It’s your job to create data using the JavaScript data structures at your disposal: arrays and objects.
+
+
+---- Populating Data
+
+1. Let’s make a data structure to store the information about our team.
+Declare a const variable called team and set it to an empty object.
+
+2. Our team has players and the games that they have played.
+Let’s represent both of these by adding two properties to your team object.
+Add a _players property and a _games property and initialize both to empty arrays.
+
+3. Populate the empty _players array with three players.
+Each player should be an object containing three properties: firstName, lastName, and age.
+Put each player on a new line to prevent the line from getting too long.
+
+4. Populate the empty array with three games. Each game should be an object containing three properties:
+opponent, teamPoints, and opponentPoints.
+
+---- Getting data
+
+5. Create a getter method called players to retrieve the _players property.
+Inside the getter method, return the _players property
+
+6. Create another getter method called games to retrieve the _games property.
+Inside the getter method, return the _games property.
+
+---- Adding data
+
+7. Add an .addPlayer() method to the team object. This method should take in three parameters:
+    newFirstName, newLastName, and newAge.
+Add the player object to the team object’s _players array.
+
+8. Let’s try out our new .addPlayer() method to add a new player: name Bugs Bunny, age 76.
+Log the team object’s _players property to check that our new player was added.
+
+9. Create a method for adding game results called addGame that takes three parameters:
+newOpponent, newTeamPoints, and newOpponentPoints.
+Inside the .addGame() method, create a game object by setting the three parameters to be the values for the object’s three properties.
+Add the game object to the team object’s _games array.
+
+10. Use the .addGame() method to add a record of a new game.
+Our team played against the 'Titans' where we scored 100 points and the opponent scored 98 points.
+Log the team object’s _games property to check that our new game record was properly added.
+*/
+
+const team = {
+    _players: [
+        { firstName: "Sergio",   lastName: "Canales", age: 35 }, 
+        { firstName: "Humberto", lastName: "Suazo",   age: 37 }, 
+        { firstName: "Walter",   lastName: "Erviti",  age: 36 }
+    ],
+    _games: [
+        { opponent: "Inter",     teamPoints: 1, opponentPoints: 1 }, 
+        { opponent: "Liverpool", teamPoints: 3, opponentPoints: 0 }, 
+        { opponent: "Saprisa",   teamPoints: 1, opponentPoints: 1 }
+    ],
+    get players() {
+        return this._players;
+    },
+    get games() {
+        return this._games;
+    },
+    addPlayer(newFirstName, newLastName, newAge) {
+        const player =
+        { firstName: newFirstName, lastName: newLastName, age: newAge };
+        this._players.push(player);
+    },
+    addGame(newOpponent, newTeamPoints, newOpponentPoints) {
+        const game =
+        { opponent: newOpponent, teamPoints: newTeamPoints, opponentPoints: newOpponentPoints };
+        this._games.push(game);
+    }
+};
+
+team.addPlayer("Bugs", "Bunny", 76);
+console.log(team._players);
+console.log("--------------------");
+team.addGame("Titans", 100, 98);
+console.log(team._games);
