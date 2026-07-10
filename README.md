@@ -14,8 +14,8 @@ Documenting my transition from Senior Manual QA Engineer (9+ years, Android & iO
 | Phase 0 | Git, Terminal & Automation Mindset (Freecodecamp + TAU) | ✅ Complete | April 14, 2026 | April 15, 2026 |
 | Phase 1 | Python (Codecademy: Learn Python 3) | ✅ Complete | April 15, 2026 | May 8, 2026 |
 | Phase 2 | SQL Fundamentals (Codecademy: Learn SQL) | ✅ Complete | May 8, 2026 | May 12, 2026 |
-| Phase 3 | JavaScript Fundamentals (Codecademy: Learn JavaScript + javascript.info + Exercism ) | 🔄 In Progress | May 14, 2026 | |
-| Phase 4 | Web Basics — HTML, DOM, DevTools, HTTP | ⏳ Upcoming | | |
+| Phase 3 | JavaScript Fundamentals (Codecademy: Learn JavaScript + javascript.info + Exercism ) | ✅ Complete | May 14, 2026 | Jul 9, 2026 |
+| Phase 4 | Web Basics — HTML, DOM, DevTools, HTTP | 🔄 In Progress | | |
 | Phase 5 | API Testing — Postman Academy + TAU | ⏳ Upcoming | | |
 | Phase 6 | Web Automation — Playwright + JavaScript | ⏳ Upcoming | | |
 | Phase 7 | CI/CD & Professional Practices | ⏳ Upcoming | | |
