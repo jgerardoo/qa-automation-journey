@@ -94,6 +94,21 @@ console.log("--------------------");
 // iterates over an object’s (array, string, etc.) values rather than their keys.
 const fruits = ["apple", "banana", "cherry", "orange"];
 
-for (const item of fruits) {
+for (let item of fruits) {
   console.log(item);
+}
+console.log("--------------------");
+
+// For...in Loop
+// returns the indices (index) as strings
+const phones = ["Pixel", "iPhone", "Galaxy", "Other"]
+for (const phone in phones) {
+    console.log(phone);         // "0", "1", "2", "3"
+}
+
+// for...in works perfectly on objects
+const user = { name: "Alex", age: 25 };
+for (const key in user) {
+    console.log(key); // "name", "age"
+    console.log(user[key]); // "Alex", 25
 }
