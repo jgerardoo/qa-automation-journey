@@ -316,3 +316,177 @@ const alSmith = new HighSchool("Al E. Smith", 415, ["Baseball", "Basketball", "V
 // Task 18.
 // Using the sportsTeams getter, retrieve the value saved to the _sportsTeams property in alSmith.
 console.log(alSmith.sportsTeams);
+console.log("----------------------------------------");
+console.log("----------------------------------------");
+
+
+
+
+/*
+==================================================================================
+Practice exercise generated with Claude AI assistance.
+JavaScript code for the solution written independently using the lesson concepts.
+Practice Exercise: Test case management
+==================================================================================
+
+Your QA team needs a lightweight way to track test cases before they get
+migrated into a full test management tool. Test cases come in two flavors:
+manual and automated, but they share a lot of common behavior.
+
+Create a parent class named TestCase with two subclasses: ManualTestCase
+and AutomatedTestCase.
+
+    - TestCase:
+        - Properties: _title (string), _priority (one of: "low", "medium", "high"), _status (string,
+        initially "not run"), _runHistory (array, initially empty)
+        - Getters: all properties have a getter
+        - Setter: _priority should have a setter that only allows "low", "medium", or "high", anything
+        else should log an invalid input message and leave the value unchanged
+        - Methods:
+            - one method that records a run: it should accept a result ("pass" or "fail"),
+            update _status to that result, and add an entry to _runHistory containing
+            both the result and a timestamp (Date.now() is fine for the timestamp)
+            - one method that reports the pass rate across all runs so far, as a percentage
+            rounded to the nearest whole number (if there are no runs yet,
+            it should return 0 instead of dividing by zero)
+            - one static method that, given an array of TestCase instances, returns only the
+            ones whose current _status is "fail"
+
+    - ManualTestCase:
+        - Additional property: _tester (string) — the name of the person who last ran it manually
+        - Additional getter for _tester
+
+    - AutomatedTestCase (extends TestCase):
+        - Additional property: _scriptPath (string) — file path to the automation script
+        - Additional getter for _scriptPath
+
+Tasks:
+
+1. Create a ManualTestCase instance:
+    - Title: "Login with valid credentials"
+    - Priority: "high"
+    - Tester: "Jesse Varela"
+   Save it to a constant named loginTest.
+
+2. Record two runs on loginTest: first a "fail", then a "pass".
+
+3. Log loginTest's pass rate to the console. (Should reflect 1 pass out
+   of 2 runs.)
+
+4. Try setting loginTest's priority to "urgent". Confirm it logs the
+   invalid input message and that the priority getter still returns "high"
+   afterward.
+
+5. Create an AutomatedTestCase instance:
+    - Title: "Checkout flow smoke test"
+    - Priority: "medium"
+    - Script path: "playwright/tests/checkout.spec.js"
+   Save it to a constant named checkoutTest.
+
+6. Record one run on checkoutTest with a result of "fail".
+
+7. Create an array containing both loginTest and checkoutTest. Call the
+   static method to filter for currently failing test cases, and log the
+   result. Confirm only checkoutTest appears (since its last status is
+   "fail", while loginTest's last recorded run was a "pass").
+*/
+class TestCase {
+    constructor(title, priority) {
+        this._title = title;
+        this._priority = priority;
+        this._status = "not run";
+        this._runHistory = [];
+    }
+    get title() {
+        return this._title;
+    }
+    get priority() {
+        return this._priority;
+    }
+    get status() {
+        return this._status;
+    }
+    get runHistory() {
+        return this._runHistory;
+    }
+    set priority(priority) {
+        const validPriority = ["low", "medium", "high"];
+        if (validPriority.includes(priority)) {
+            this._priority = priority;
+        } else {
+            console.log("Invalid input: priority must be set to 'low', 'medium' or 'high'.");
+        }
+    }
+    run(result) {
+        const validResult = ["pass", "fail"];
+        if (validResult.includes(result)) {
+            this._status = result;
+            this._runHistory.push({
+                result: result,
+                timestamp: Date.now()
+            });
+        } else {
+            console.log("Invalid input: result must be set to 'pass' or 'fail'.");
+        }
+    }
+    passrate() {
+        if (this._runHistory.length === 0) {
+            return 0;
+        } else {
+            const timesRun = this._runHistory.length;
+            const timesPass = this._runHistory.filter(entry => entry.result === "pass").length;
+            return Math.round((timesPass / timesRun) * 100);
+        }
+    }
+    static failedTestCases(testCases) {
+        return testCases.filter(test => test._status === "fail");
+    }
+};
+
+class ManualTestCase extends TestCase{
+    constructor(title, priority, tester) {
+        super(title, priority, "not run");
+        this._tester = tester;
+    }
+    get tester() {
+        return this._tester;
+    }
+};
+
+class AutomatedTestCase extends TestCase{
+    constructor(title, priority, scriptPath) {
+        super(title, priority, "not run");
+        this._scriptPath = scriptPath;
+    }
+    get scriptPath() {
+        return this._scriptPath;
+    }
+};
+
+// Task 1. ManualTestCase instance
+const loginTest = new ManualTestCase("Login with valid credentials", "high", "Jesse Varela");
+console.log(loginTest);
+
+// Task 2. Record two runs on loginTest
+loginTest.run("fail");
+loginTest.run("pass");
+
+// Task 3. Log loginTest's pass rate to the console
+console.log(loginTest.passrate());
+
+// Task 4. Set loginTest's priority to "urgent"
+console.log(loginTest.priority);        // checking current priority, should be "high"
+loginTest.priority = "urgent";          // trying to set "urgent" as priority (invalid)
+console.log(loginTest.priority);        // priority stays as "high"
+
+// Task 5. Create an AutomatedTestCase instance
+const checkoutTest = new AutomatedTestCase("Checkout flow smoke test", "medium", "playwright/tests/checkout.spec.js");
+console.log(checkoutTest);
+
+// Task 6. Record one run on checkoutTest with a result of "fail".
+checkoutTest.run("fail");
+console.log(checkoutTest.passrate());
+
+// Task 7. Array containing both loginTest and checkoutTest
+const allTestCases = [loginTest, checkoutTest];
+console.log(TestCase.failedTestCases(allTestCases));
