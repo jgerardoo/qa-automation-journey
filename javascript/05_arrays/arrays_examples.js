@@ -80,6 +80,15 @@ console.log(animals);                       // the original array is unchanged
 console.log(animals.indexOf("camel"));       // 2
 console.log(animals.indexOf("giraffe"));     // -1
 
+// .includes() method checks if an array or string contains a specific value (true or false)
+const validPriorities = ["low", "medium", "high"];
+console.log(validPriorities.includes("low"));       // true
+console.log(validPriorities.includes("urgent"));    // false
+
+const message = "Hello, welcome to the team!";
+console.log(message.includes("welcome"));   // true
+console.log(message.includes("Welcome"));   // false (case-sensitive)
+
 // Arrays and Functions
 const concepts = ["arrays", "can", "be", "mutated"];
 console.log(concepts);
