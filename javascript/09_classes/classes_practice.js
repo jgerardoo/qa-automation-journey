@@ -254,9 +254,7 @@ class School {
 
 class PrimarySchool extends School {
     constructor(name, numberOfStudents, pickupPolicy) {
-        super(name);
-        this._level = "Primary";
-        this._numberOfStudents = numberOfStudents;
+        super(name, "Primary", numberOfStudents);
         this._pickupPolicy = pickupPolicy;
     }
     get pickupPolicy() {
@@ -313,7 +311,7 @@ Create a HighSchool instance with the following properties:
     - Sports Teams: ["Baseball", "Basketball", "Volleyball", "Track and Field"]
     - Save the instance to a constant variable named alSmith.
 */
-const alSmith = new HighSchool("Al E. Smith", 416, ["Baseball", "Basketball", "Volleyball", "Track and Field"]);
+const alSmith = new HighSchool("Al E. Smith", 415, ["Baseball", "Basketball", "Volleyball", "Track and Field"]);
 
 // Task 18.
 // Using the sportsTeams getter, retrieve the value saved to the _sportsTeams property in alSmith.
