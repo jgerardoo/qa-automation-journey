@@ -9,7 +9,6 @@ Project practice 1: Build a Library
 You’ve become head librarian at your local Books-‘N-Stuff, which is in dire need of your help.
 Books-‘N-Stuff carries three different types of media: books, CDs, and movies.
 
-Tasks 1 - 14 (Omitted the step-by-step tasks because i wanted to create the Classes on my own).
 Create a parent class named Media with three subclasses:
 Book, Movie, and CD. These three subclasses have the following properties and methods:
     - Book
@@ -24,8 +23,10 @@ Book, Movie, and CD. These three subclasses have the following properties and me
         Properties: _artist (string), _title (string), _isCheckedOut (boolean, initially false), _ratings (array, initially empty), and _songs (array of strings)
         Getters: all properties have a getter
         Methods: .getAverageRating(), .toggleCheckOutStatus(), and .addRating()
-*/
 
+Tasks 1 - 14.
+(Omitted the step-by-step tasks because I wanted to create the Classes on my own).
+*/
 class Media {
     constructor(title) {
         this._title = title;
@@ -161,3 +162,159 @@ console.log(speed._ratings);
 // Task 24.
 // Call .getAverageRating() on speed. Log the result to the console.
 console.log(speed.getAverageRating());
+console.log("----------------------------------------");
+console.log("----------------------------------------");
+
+
+
+
+/*
+===============================================================
+Learn Intermediate JavaScript - Codecademy | Lesson 1: Classes
+Practice exercise from the course lesson concepts.
+Project practice 2: School Catalogue
+    Concepts: Classes in JavaScript
+===============================================================
+
+The New York City Department of Education wants a digital school catalog to hold
+quick reference material for each school in the city.
+We need to create classes for primary and high schools.
+
+Because these classes share properties and methods, each will inherit from a parent School class.
+Our parent and three child classes have the following properties, getters, setters, and methods:
+    - School
+        - Properties: _name (string), _level (one of three strings: 'primary', 'middle', or 'high'), and _numberOfStudents (number)
+        - Getters: all properties have getters
+        - Setters: the _numberOfStudents property has a setter
+        - Methods: .quickFacts() and .pickSubstituteTeacher() (this is a static method)
+    - Primary
+        - Includes everything in the School class, plus one additional property
+        - Properties: _pickupPolicy (string)
+    - Middle
+        - Includes everything in the School class, but nothing additional
+    - High
+        - Includes everything in the School class, plus one additional property
+        - Properties: _sportsTeams (array of strings)
+
+Tasks 1 - 4.
+(Omitted the step-by-step tasks because I wanted to create create the constructor and
+getters for the four classes above on my own).
+
+Task 5.
+Create a numberOfStudents setter. The method should first check if the input (newNumberOfStudents)
+is a number. If so, then set the _numberOfStudents property. If not, log:
+"Invalid input: numberOfStudents must be set to a Number."
+
+Task 6.
+Under your getters, create a method named quickFacts that logs the following string to the console:
+"SCHOOL NAME educates NUMBER OF STUDENTS students at the LEVEL school level."
+SCHOOL NAME = instance’s _name / NUMBER OF STUDENTS = instance’s _numberOfStudents
+LEVEL = instance’s _level value
+Use the respective getter methods to access the underlying properties.
+
+Task 7.
+Create a static method named pickSubstituteTeacher. This method will receive one parameter substituteTeachers.
+The substituteTeachers parameter will take an array of strings.
+Inside the method, randomly generate a whole number between 0 and one less than the length of the substituteTeachers array.
+Use this number to access and return the substitute teacher at that randomly generated index.
+
+Tasks 8 - 13.
+(Omitted the step-by-step tasks because I wanted to create create the classes above on my own).
+*/
+class School {
+    constructor(name, level, numberOfStudents) {
+        this._name = name;
+        this._level = level;
+        this._numberOfStudents = numberOfStudents;
+    }
+    get name() {
+        return this._name;
+    }
+    get level() {
+        return this._level;
+    }
+    get numberOfStudents() {
+        return this._numberOfStudents;
+    }
+    set numberOfStudents(newNumberOfStudents) {
+        if (typeof newNumberOfStudents === "number") {
+            this._numberOfStudents = newNumberOfStudents;
+        } else {
+            console.log("Invalid input: numberOfStudents must be set to a Number.");
+        }
+    }
+    quickFacts() {
+        console.log(`${this._name} educates ${this._numberOfStudents} students at the ${this._level} school level.`);
+    }
+    static pickSubstituteTeacher(substituteTeachers) {
+        const randNum = Math.floor(Math.random() * substituteTeachers.length);
+        return substituteTeachers[randNum];
+    }
+};
+
+class PrimarySchool extends School {
+    constructor(name, numberOfStudents, pickupPolicy) {
+        super(name);
+        this._level = "Primary";
+        this._numberOfStudents = numberOfStudents;
+        this._pickupPolicy = pickupPolicy;
+    }
+    get pickupPolicy() {
+        return this._pickupPolicy;
+    }
+};
+
+// class Middle extends School {
+//     constructor(name) {
+//         super(name);
+//     }
+// };
+
+class HighSchool extends School {
+    constructor(name, numberOfStudents, sportsTeams) {
+        super(name, "high", numberOfStudents);
+        this._sportsTeams = sportsTeams;
+    }
+    get sportsTeams() {
+        return this._sportsTeams;
+    }
+};
+
+/*
+Instances of PrimarySchool and HighSchool
+
+Task 14.
+Create a PrimarySchool instance with the following properties:
+    - Name: "Lorraine Hansbury"
+    - Number of Students: 514
+    - Pickup Policy:
+        - "Students must be picked up by a parent, guardian, or a family member over the age of 13."
+    - Save the instance to a constant variable named lorraineHansbury.
+*/
+const lorraineHansbury = new PrimarySchool("Lorraine Hansbury", 514, "Students must be picked up by a parent, guardian, or a family member over the age of 13.");
+
+// Task 15.
+// Call .quickFacts() on the lorraineHansbury instance.
+lorraineHansbury.quickFacts();
+
+/*
+Task 16.
+The principal of Lorraine Hansbury needs a substitute teacher for the day.
+Call .pickSubstituteTeacher() on School, and pass the following array as an argument:
+["Jamal Crawford", "Lou Williams", "J. R. Smith", "James Harden", "Jason Terry", "Manu Ginobli"];
+*/
+console.log(School.pickSubstituteTeacher(["Jamal Crawford", "Lou Williams", "J. R. Smith", "James Harden", "Jason Terry", "Manu Ginobli"]));
+
+/*
+Task 17.
+Create a HighSchool instance with the following properties:
+    - Name: "Al E. Smith"
+    - Number of Students: 415
+    - Sports Teams: ["Baseball", "Basketball", "Volleyball", "Track and Field"]
+    - Save the instance to a constant variable named alSmith.
+*/
+const alSmith = new HighSchool("Al E. Smith", 416, ["Baseball", "Basketball", "Volleyball", "Track and Field"]);
+
+// Task 18.
+// Using the sportsTeams getter, retrieve the value saved to the _sportsTeams property in alSmith.
+console.log(alSmith.sportsTeams);
