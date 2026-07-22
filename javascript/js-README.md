@@ -122,6 +122,9 @@ javascript/
 ├── 08_objects/                           <- Codecademy - Learn JavaScript: lesson 8 + exercises
 ├── 09_classes/                           <- Codecademy - Learn Intermediate JavaScript: lesson 1 + projects
 ├── 10_modules/                           <- Codecademy - Learn Intermediate JavaScript: lesson 2 + projects
+│   ├── images/
+│   ├── modules_examples/
+│   └── modules_practice/
 ├── 11_promises/                          <- Codecademy - Learn Intermediate JavaScript: lesson 3 + projects
 ├── 12_async_await/                       <- Codecademy - Learn Intermediate JavaScript: lesson 4 + projects
 ├── 13_requests/                          <- Codecademy - Learn Intermediate JavaScript: lesson 5 + projects
