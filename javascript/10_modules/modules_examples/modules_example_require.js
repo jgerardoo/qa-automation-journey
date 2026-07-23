@@ -2,7 +2,7 @@ const radius = 5;
 const sideLength = 10;
 
 // import the entire modules_examples_export.js module
-const areaFunctions = require("./modules_examples_export.js");
+const areaFunctions = require("./modules_example_export.js");
 
 // use the imported circleArea and squareArea methods here
 const areaOfCircle = areaFunctions.circleArea(radius);
