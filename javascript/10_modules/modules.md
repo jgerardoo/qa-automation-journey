@@ -59,3 +59,7 @@ console.log(`The boiling point of water in Fahrenheit is ${boilingPointF}`);
 ```
 When you use require(), the entire module.exports object is returned and stored in the variable converters. This means that both the .celsiusToFahrenheit() and .fahrenheitToCelsius() methods can be used in this program.
 
+### Implementing Modules using ES6 Syntax
+
+#### Implementing modules in a browser’s runtime environment using ES6 modules syntax.
+What are modules?
