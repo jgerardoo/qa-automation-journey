@@ -58,7 +58,154 @@ console.log(`The boiling point of water in Fahrenheit is ${boilingPointF}`);
 ```
 When you use require(), the entire module.exports object is returned and stored in the variable converters. This means that both the .celsiusToFahrenheit() and .fahrenheitToCelsius() methods can be used in this program.
 
-## Implementing Modules using ES6 Syntax
+### References
+[Node runtime environment](https://nodejs.org/en/about/)
 
-### Implementing modules in a browser’s runtime environment using ES6 modules syntax.
-What are modules?
+## Implementing ES6 Modules in the Browser
+A module must be entirely contained within a file. You need to consider where a new module may be placed within the file system. For example, if the module needs to be used by two projects, it needs to be put it in a mutually accessible location, like this:
+```
+secret-image/
+|-- secret-image.html
+|-- secret-image.js
+secret-messages/
+|-- secret-messages.html
+|-- secret-messages.js
+modules/
+|-- dom-functions.js    <-- new module file
+```
+
+### ES6 Named Export Syntax
+Using ES6 syntax, the name of each exported resource is listed between curly braces and separated by commas. In the example below, the two functions are exported using the ES6 export statement:
+```
+/* dom-functions.js */
+const toggleHiddenElement = (domElement) => {
+  if (domElement.style.display === 'none') {
+    domElement.style.display = 'block';
+  } else {
+    domElement.style.display = 'none';
+  }
+}
+
+const changeToFunkyColor = (domElement) => {
+  const r = Math.random() * 255;
+  const g = Math.random() * 255;
+  const b = Math.random() * 255;
+        
+  domElement.style.background = `rgb(${r}, ${g}, ${b})`;
+}
+
+export { toggleHiddenElement, changeToFunkyColor };
+```
+In addition to the syntax above, individual values may be exported as named exports by simply placing the export keyword in front of the variable’s declaration:
+```
+/* dom-functions.js */
+export const toggleHiddenElement = (domElement) => {
+  // logic omitted...
+}
+
+export const changeToFunkyColor = (domElement) => {
+  // logic omitted...
+}
+```
+
+### ES6 Named Import Syntax
+Now that the secret-messages functions were exported, secret-messages program can imports functionality from dom-functions.js. Notice the ES6 syntax for importing named resources from modules is similar to the export syntax:
+```
+/* secret-messages.js */
+import { toggleHiddenElement, changeToFunkyColor } from '../modules/dom-functions.js';
+
+const buttonElement = document.getElementById('secret-button');
+const pElement = document.getElementById('secret-p');
+
+buttonElement.addEventListener('click', () => {
+  toggleHiddenElement(pElement);
+  changeToFunkyColor(buttonElement);
+});
+```
+secret-messages.html should also be updated adding the attribute type='module' to the 'script' element to avoid some browsers to throw an error.
+```
+<!-- secret-messages.html --> 
+<html>
+  <head>
+    <title>Secret Messages</title>
+  </head>
+  <body>
+    <button id="secret-button"> Press me... if you dare </button>
+    <p id="secret-p" style="display: none"> Modules are fancy! </p>
+    <script type="module" src="./secret-messages.js"> </script>
+  </body>
+</html>
+```
+
+### Renaming Imports to Avoid Naming Collisions
+Sometimes, resources you wish to import share a name with some other value that already exists in your program (or from another imported module).
+```
+/* inside greeterEspanol.js */
+const greet = () => {
+  console.log('hola');
+}
+export { greet };
+
+/* inside greeterFrancais.js */
+const greet = () => {
+  console.log('bonjour');
+}
+export { greet };
+```
+
+We can use alias (as) to avoid an error due to the fact that the imported identifier(s) have already been defined.
+```
+/* main.js */
+import { greet as greetEspanol } from 'greeterEspanol.js';
+import { greet as greetFrancais } from 'greeterFrancais.js';
+
+greetEspanol();             // Prints: hola
+greetFrancais();            // Prints: bonjour
+```
+### Default Exports and Imports
+We can import/export an object containing the entire set of functions and/or data values of a module by using Default Exports and Imports.
+
+From previous example, the dom-functions.js module could be rewritten to use a default export:
+```
+/* dom-functions.js */
+const toggleHiddenElement = (domElement) => {
+    if (domElement.style.display === 'none') {
+      domElement.style.display = 'block';
+    } else {
+      domElement.style.display = 'none';
+    }
+}
+
+const changeToFunkyColor = (domElement) => {
+  const r = Math.random() * 255;
+  const g = Math.random() * 255;
+  const b = Math.random() * 255;
+        
+  domElement.style.background = `rgb(${r}, ${g}, ${b})`;
+}
+
+const resources = { 
+  toggleHiddenElement, 
+  changeToFunkyColor
+};
+export default resources;
+```
+This default export object can now be used within secret-messages.js like so:
+```
+import domFunctions from '../modules/dom-functions.js';
+
+const { toggleHiddenElement, changeToFunkyColor } = domFunctions;
+
+const buttonElement = document.getElementById('secret-button');
+const pElement = document.getElementById('secret-p');
+
+buttonElement.addEventListener('click', () => {
+  toggleHiddenElement(pElement);
+  changeToFunkyColor(buttonElement);
+});
+```
+
+#### References
+[ES6 Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
+[ECMAScript 6 (ES6)](https://en.wikipedia.org/wiki/ECMAScript_version_history#ES6)
+[DOM API](https://developer.mozilla.org/en-US/docs/Web/API/Document)
